@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "lib": ["es2017", "esnext.asynciterable"],
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node",
+      "module": "commonjs",
+      "pretty": true,
+      "sourceMap": true,
+      "allowJs": true,
+      "noEmit": false,
+      "esModuleInterop": true,
+      "isolatedModules": true,
+      "resolveJsonModule": true,
+      "baseUrl": "./",
+      "paths": {
+        "@school-management/common": ["packages/common"]
+      }
+    },
+    "exclude": ["node_modules", "**/node_modules/*", "**/dist/*"]
+  }
+  

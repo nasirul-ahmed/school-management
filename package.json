@@ -1,0 +1,45 @@
+{
+  "name": "@school-management/root",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@4.0.2",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "app": "yarn workspace @school-management/app",
+    "cms": "yarn workspace @school-management/cms",
+    "lint": "eslint --ignore-path .gitignore --ext .ts packages/**/src/",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier --config ./.prettierrc.js --write \"packages/**/src/**/*{.ts,.json}\"",
+    "prettier:verify": "prettier --config ./.prettierrc.js --check \"packages/**/src/**/*{.ts,.json}\"",
+    "postinstall": "husky install",
+    "typecheck": "yarn cms typecheck && yarn rgs typecheck && yarn external typecheck && yarn publicApi typecheck"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@types/eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "esbuild": "^0.19.10",
+    "esbuild-plugin-clean": "^1.0.1",
+    "esbuild-plugin-tsc": "^0.4.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "packages/**/src/**/*{.ts,.json}": [
+      "prettier --config ./.prettierrc.js --write",
+      "node --max_old_space_size=6096 ./node_modules/eslint/bin/eslint.js --fix"
+    ]
+  }
+}

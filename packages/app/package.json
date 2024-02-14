@@ -1,0 +1,58 @@
+{
+  "name": "@school-management/app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "ts-node ./build.ts",
+    "start": "nodemon",
+    "start:prod": "NODE_ENV=production node dist/index.js",
+    "inspect": "nodemon --inspect src/app.ts",
+    "typecheck": "tsc -noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "typescript",
+    "node",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.31.2",
+    "celebrate": "^15.0.3",
+    "cors": "^2.8.5",
+    "date-and-time": "^3.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "luxon": "^3.4.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.0.0",
+    "reflect-metadata": "^0.1.13",
+    "typedi": "^0.10.0",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9",
+    "@types/luxon": "^3",
+    "@types/node": "^20.8.10",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "engines": {
+    "node": ">=16.x"
+  }
+}
