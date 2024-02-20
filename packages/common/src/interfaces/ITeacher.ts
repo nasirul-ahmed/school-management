@@ -1,5 +1,6 @@
 import { Gender, MaritalStatus } from "../helper/types";
 import { IBase } from "./IBase";
+import { IPaginatedQuery } from "./IPaginatedQuery";
 
 export interface ITeacher extends IBase {
   name: string;
@@ -23,4 +24,5 @@ export interface ITeacher extends IBase {
   reference: string;
 }
 
-export type ITeacherDTO = Partial<Omit<ITeacher, '_id'>>;
+export type ITeacherDTO = Partial<Omit<ITeacher, "_id">>;
+export type ITeacherQuery = IPaginatedQuery & ITeacherDTO;

@@ -1,6 +1,7 @@
 import { ObjectId } from "mongoose";
 import { Gender } from "../helper/types";
 import { IBase } from "./IBase";
+import { IPaginatedQuery } from "./IPaginatedQuery";
 
 export interface IStudent extends IBase {
   name: string;
@@ -22,7 +23,8 @@ export interface IStudent extends IBase {
   isActive: Boolean;
   reference: string;
   sportsActivity: [ObjectId | string];
+  admissionDate: Date;
 }
 
-
-export type IStudentDTO = Partial<Omit<IStudent, '_id'>>;
+export type IStudentDTO = Partial<Omit<IStudent, "_id">>;
+export type IStudentQuery = IPaginatedQuery & IStudentDTO;

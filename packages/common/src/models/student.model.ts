@@ -22,6 +22,7 @@ const Student = new Schema<IStudent>(
     isActive: Boolean,
     reference: String,
     sportsActivity: [{ type: Schema.Types.ObjectId }],
+    admissionDate: Date,
   },
   { timestamps: true }
 );
